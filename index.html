@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo-wrap">
+                <img src="./images/logo.png" alt="logo" class="logo">
+                <h3>Nissho Sound</h3>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Music List</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="left-col">
+                <h1>MUSIC<br>IS<br>INFINITE</h1>
+            </div>
+            <div class="right-col">
+                <p>Click Here To Listen</p>
+                <img src="./images/play.png" alt="" id="icon">
+            </div>
+        </div>
+    </div>
+
+    <audio id="mySong">
+        <source src="./audio/music.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        const mySong = document.getElementById("mySong");
+        const icon = document.getElementById("icon");
+
+        icon.addEventListener("click", () => {
+            if(mySong.paused){
+                mySong.play();
+                icon.src = "./images/pause.png";
+            }else{
+                mySong.pause();
+                icon.src = "./images/play.png";
+            }
+        })
+    </script>
+</body>
+</html>
